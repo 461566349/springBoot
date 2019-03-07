@@ -14,7 +14,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-12">
-					<nav class="navbar navbar-inverse" role="navigation">
+					<nav id="navbar" class="navbar navbar-inverse" role="navigation">
 						<div class="container-fluid">
 							<div class="navbar-header">
 								<a class="navbar-brand" href="#">淘优品商城</a>
@@ -23,6 +23,21 @@
 								<ul class="nav navbar-nav">
 									<li>
 										<a href="#">请登录</a>
+									</li>
+								</ul>
+								<ul class="nav navbar-nav navbar-right">
+									<li>
+										<div class="input-group input-group-sm" style="margin-top: 5%;width: 250px;">
+											<input class="form-control" type="text" placeholder="搜索" />
+											<span class="input-group-btn">
+												<button type="button" class="btn btn-primary">
+													<span class="glyphicon glyphicon-search"></span>搜索
+												</button>
+											</span>
+										</div>
+									</li>
+									<li style="width: 50px;">
+
 									</li>
 								</ul>
 							</div>
@@ -51,13 +66,15 @@
 						</li>
 					</ul>
 				</div>
+
 				<div class="col-lg-5">
-					<div id="myCarousel" class="carousel slide">
+					<div id="myCarousel" class="carousel slide center-block"">
 						<!-- 轮播（Carousel）指标 -->
-						<ol class="carousel-indicators">
-							<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-							<li data-target="#myCarousel" data-slide-to="1"></li>
-							<li data-target="#myCarousel" data-slide-to="2"></li>
+						<ol class="
+					 carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1"></li>
+						<li data-target="#myCarousel" data-slide-to="2"></li>
 						</ol>
 						<!-- 轮播（Carousel）项目 -->
 						<div class="carousel-inner">
@@ -73,27 +90,42 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4 text-center" >
+
+				<div class="col-lg-4 text-center">
 					<div style="border: 1px solid #ADADAD;">
 						<div>&nbsp;</div>
 						<figure style="width: 80px;height: 80px;" class="center-block">
-							<img class="img-responsive img-circle cen" src="img/2.jpg" />
+							<img class="img-responsive img-circle cen" src="img/98d68eaa01b3495cb70cf4b09ef7c638.jpg" />
 						</figure>
-						<button class="btn btn-primary" style="width: 100px;"><strong>登录</strong></button>
-						<button class="btn btn-primary" style="width: 100px;"><strong>注册</strong></button>
-						<button class="btn btn-primary" style="width: 100px;"><strong>开店</strong></button>
+						<div>&nbsp;</div>
+						<button onclick="login()" id="login" class="btn btn-primary" style="width: 100px;"><strong>登录</strong></button>
+						<button id="register" class="btn btn-primary" style="width: 100px;"><strong>注册</strong></button>
+						<button id="store" class="btn btn-primary" style="width: 100px;"><strong>开店</strong></button>
 						<div>&nbsp;</div>
 					</div>
 				</div>
-			</div>
 
+			</div>
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							nihao
+						</div>
+						<img src="img/2.jpg"/>
+					</div>
+				</div>
+			</div>
 		</div>
 		<script src="js/jquery-3.3.1.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script>
 			$('#myCarousel').carousel({
 				interval: 2000
-			})
+			});
+			function login(){
+				window.location.href = "pages/login.html";
+			}
 		</script>
 	</body>
 
