@@ -26,6 +26,7 @@
 									</li>
 								</ul>
 								<ul class="nav navbar-nav navbar-right">
+									<li></li>
 									<li>
 										<div class="input-group input-group-sm" style="margin-top: 5%;width: 250px;">
 											<input class="form-control" type="text" placeholder="搜索" />
@@ -99,7 +100,7 @@
 						</figure>
 						<div>&nbsp;</div>
 						<button onclick="login()" id="login" class="btn btn-primary" style="width: 100px;"><strong>登录</strong></button>
-						<button id="register" class="btn btn-primary" style="width: 100px;"><strong>注册</strong></button>
+						<button id="register" class="btn btn-primary" style="width: 100px;" onclick="registe()"><strong>注册</strong></button>
 						<button id="store" class="btn btn-primary" style="width: 100px;"><strong>开店</strong></button>
 						<div>&nbsp;</div>
 					</div>
@@ -112,7 +113,7 @@
 						<div class="panel-body">
 							nihao
 						</div>
-						<img src="img/2.jpg"/>
+						<img src="img/2.jpg" />
 					</div>
 				</div>
 			</div>
@@ -123,9 +124,14 @@
 			$('#myCarousel').carousel({
 				interval: 2000
 			});
-			function login(){
+
+			function login() {
 				window.location.href = "pages/login.html";
-			}
+			};
+
+			function registe() {
+				window.location.href = "pages/registe.html";
+			};
 		</script>
 	</body>
 

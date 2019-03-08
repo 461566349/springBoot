@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta charset="utf-8">
 		<link rel="stylesheet" href="../css/bootstrap.min.css" />
-		
 		<title></title>
 	</head>
 	<body style="background-color: #398439;">
@@ -29,11 +28,16 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<div class="col-sm-offset-2 col-sm-3">
-								<button class="btn btn-primary" onclick="check()">登录</button>
+								<label class="control-label col-sm-2">
+									确认密码:
+								</label>
+								<div class="col-sm-5">
+									<input id="confirm" type="password" class="form-control" placeholder="请输入密码">
 								</div>
-								<div class="col-sm-3">
-								<button class="btn btn-primary" onclick="registe()">注册</button>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-3">
+								<button class="btn btn-primary" onclick="check()">提交</button>
 								</div>
 							</div>
 						</form>
@@ -50,10 +54,6 @@
 			if(username=='123'){
 				alert("你好,123");
 			}
-			};
-			function registe(){
-				window.location.href = "./registe.html";
-				window.event.returnValue=false; 
 			};
 		</script>
 	</body>
