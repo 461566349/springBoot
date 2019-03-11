@@ -22,7 +22,7 @@
 							<div>
 								<ul class="nav navbar-nav">
 									<li>
-										<a href="#">请登录</a>
+										<a href="#" onclick="login()">请登录</a>
 									</li>
 								</ul>
 								<ul class="nav navbar-nav navbar-right">
@@ -69,13 +69,13 @@
 				</div>
 
 				<div class="col-lg-5">
-					<div id="myCarousel" class="carousel slide center-block"">
+					<div id="myCarousel" class="carousel slide center-block">
 						<!-- 轮播（Carousel）指标 -->
 						<ol class="
 					 carousel-indicators">
-						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-						<li data-target="#myCarousel" data-slide-to="1"></li>
-						<li data-target="#myCarousel" data-slide-to="2"></li>
+							<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+							<li data-target="#myCarousel" data-slide-to="1"></li>
+							<li data-target="#myCarousel" data-slide-to="2"></li>
 						</ol>
 						<!-- 轮播（Carousel）项目 -->
 						<div class="carousel-inner">
@@ -97,11 +97,22 @@
 						<div>&nbsp;</div>
 						<figure style="width: 80px;height: 80px;" class="center-block">
 							<img class="img-responsive img-circle cen" src="img/98d68eaa01b3495cb70cf4b09ef7c638.jpg" />
+							<p id="userName">星光狱</p>
 						</figure>
+						<div>&nbsp;</div>
 						<div>&nbsp;</div>
 						<button onclick="login()" id="login" class="btn btn-primary" style="width: 100px;"><strong>登录</strong></button>
 						<button id="register" class="btn btn-primary" style="width: 100px;" onclick="registe()"><strong>注册</strong></button>
 						<button id="store" class="btn btn-primary" style="width: 100px;"><strong>开店</strong></button>
+						<div>&nbsp;</div>
+						<div>
+							<button type="button" class="btn btn-primary">
+								<span class="glyphicon glyphicon-shopping-cart"></span> 购物车
+							</button>
+							<button type="button" class="btn btn-primary">
+								<span class="glyphicon glyphicon-list-alt"></span> 我的订单
+							</button>
+						</div>
 						<div>&nbsp;</div>
 					</div>
 				</div>
