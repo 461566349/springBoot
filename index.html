@@ -17,7 +17,7 @@
 					<nav id="navbar" class="navbar navbar-inverse" role="navigation">
 						<div class="container-fluid">
 							<div class="navbar-header">
-								<a class="navbar-brand" href="#">淘优品商城</a>
+								<a class="navbar-brand" href="index.html">淘优品商城</a>
 							</div>
 							<div>
 								<ul class="nav navbar-nav">
@@ -106,10 +106,10 @@
 						<button id="store" class="btn btn-primary" style="width: 100px;"><strong>开店</strong></button>
 						<div>&nbsp;</div>
 						<div>
-							<button type="button" class="btn btn-primary">
+							<button id="cart" type="button" class="btn btn-primary">
 								<span class="glyphicon glyphicon-shopping-cart"></span> 购物车
 							</button>
-							<button type="button" class="btn btn-primary">
+							<button id="order" type="button" class="btn btn-primary">
 								<span class="glyphicon glyphicon-list-alt"></span> 我的订单
 							</button>
 						</div>
@@ -132,6 +132,11 @@
 		<script src="js/jquery-3.3.1.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script>
+			//获取项目路径
+			var pathName = document.location.pathname;
+			var index = pathName.substr(1).indexOf("/");
+			var result = pathName.substr(0, index + 1);
+			
 			$('#myCarousel').carousel({
 				interval: 2000
 			});
@@ -143,6 +148,7 @@
 			function registe() {
 				window.location.href = "pages/registe.html";
 			};
+			
 		</script>
 	</body>
 
