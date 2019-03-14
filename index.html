@@ -3,7 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
 
     <meta charset="utf-8" />
     <title></title>
@@ -27,24 +27,23 @@
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-								<div class="radio"  style="color: white;">
-								    <label>
-								        <input style="color: white;" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>宝贝
-								    </label>
-								</div>
-								
-							</li>
-							<li>
-								<div class="radio"  style="color: white;">
-								    <label>
-								        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">店铺
-								    </label>
-								</div>
-							</li>
-							<li>&nbsp;</li>
+                                <div class="radio"  style="color: white;">
+                                    <label>
+                                        <input style="color: white;" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>宝贝
+                                    </label>
+                                </div>
+
+                            </li>
+                            <li>
+                                <div class="radio"  style="color: white;">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">店铺
+                                    </label>
+                                </div>
+                            </li>
+                            <li>&nbsp;</li>
                             <li>
                                 <div class="input-group input-group-sm" style="margin-top: 5%;width: 250px;">
-									
                                     <input class="form-control" type="text" placeholder="搜索" />
                                     <span class="input-group-btn">
 												<button type="button" class="btn btn-primary" onclick="search()">
@@ -67,7 +66,7 @@
             <ul class="list-group">
                 <li class="list-group-item">
                     iphone
-                    <a class="pull-right" href="#">
+                    <a class="pull-right" href="#" onclick="catalog('iphone')">
                         >
                     </a>
                 </li>
@@ -169,25 +168,9 @@
     function search() {
         $.ajax({
             type: "get",
-            url: "http://192.168.0.103:8080/product/getAll",
+            url: "/product/getAll",
             success: function(data) {
-                for(var i = 0; i < data.length; i++) {
-                    var panel = '<li class="col-lg-2">'+
-                        '<div class="panel panel-default">'+
-                        '<div class="panel-heading">'+
-                        '<h3 class="panel-title">'+data[i].productName+'</h3>'+
-                        '</div>'+
-                        '<div class="panel-body">'+
-                            '<img src="'+data[i].img+'" height="100%" width="100%" align="middle"/>'
-                         +
-                        '</div>'+
-                        '<table class="table">'+
-                        '<th>¥'+data[i].price+'</th>'+
-                        '</table>'+
-                        '</div>'+
-                        '</li>';
-                    $("#productList").append(panel);
-                }
+              showProduct(data);
 
             },
             error: function(data) {
@@ -195,6 +178,39 @@
             }
         })
     };
+
+    function catalog(target) {
+        $.ajax({
+           type:'get',
+           url:'/product/get/'+target,
+           success:function (data) {
+               showProduct(data);
+           },
+            error:function (data) {
+                alert('异常!!')
+            }
+        });
+    };
+    function showProduct(data) {
+        $("#productList").empty();
+        for(var i = 0; i < data.length; i++) {
+            var panel = '<li class="col-lg-2">'+
+                '<div class="panel panel-default">'+
+                '<div class="panel-heading">'+
+                '<h3 class="panel-title">'+data[i].productName+'</h3>'+
+                '</div>'+
+                '<div class="panel-body">'+
+                '<img src="'+data[i].img+'" height="100%" width="100%" align="middle"/>'
+                +
+                '</div>'+
+                '<table class="table">'+
+                '<th>¥'+data[i].price+'</th>'+
+                '</table>'+
+                '</div>'+
+                '</li>';
+            $("#productList").append(panel);
+        }
+    }
 </script>
 </body>
 
